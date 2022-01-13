@@ -25,7 +25,7 @@ def choose_kamae(fighter_to_affect=""):                     # Optional argument 
             break
 
         elif kamae_set == "Chudan":
-            print("Ito kamae choosed")
+            print("Chudan kamae choosed")
             return kamae_set
             break
 
@@ -53,6 +53,9 @@ def choose_kamae(fighter_to_affect=""):                     # Optional argument 
             print("Waki kamae choosed (why not)")
             return kamae_set
             break
+
+        else:
+            print("Incorrect input, please set a correct kamae please")
 
 kamae = choose_kamae()
 
