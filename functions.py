@@ -1,11 +1,41 @@
-# Choose kamae function (ito, nito, jodan,...)
-
-
-def choose_kamae(fighter_to_affect=""):                     # Optional argument as long as there's no fighter object
+def set_grade(fighter_to_affect=""):
+    """
+    - Grade might beu useful later to set a difficulty level
+    - Optional argument as long as there's no fighter object
+    """
 
     while True:
+        try:
+            grade_set = int(input("\nPlease set your grade here (0 for kyusha) : "))
 
-        kamae_set = input("Set your kamae (h for help) : ")
+        except:
+            print("Please enter a number between 0 and 8\n")
+
+        else:     
+            if grade_set == 0:
+                print("Kyusha's competition set\n")
+                break
+
+            elif grade_set <= 2:
+                print("Honor's competition set\n")
+                break
+
+            elif grade_set <= 8:
+                print("Excellence's competition set\n")
+                break
+
+set_grade()
+
+
+def choose_kamae(fighter_to_affect=""):
+    """
+    - Choose kamae function (ito, nito, jodan,...)
+    - Optional argument as long as there's no fighter object
+    """
+    
+    while True:
+
+        kamae_set = input("\nSet your kamae (h for help) : ")
 
         if kamae_set == "h":
             print("""
