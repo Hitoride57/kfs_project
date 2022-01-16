@@ -1,6 +1,36 @@
+def set_age(fighter_to_affect=""):
+    """
+    - Age prevail on set_grade to determine competition type
+    - Optional argument as long as there's no fighter object
+    """
+
+    while True:
+        try:
+            age_set = int(input("\nPlease set you age here (minimum 12 y.o.) : "))
+        
+        except:
+            print("\nPlease enter a valid age")
+        
+        else:
+            if age_set < 12:
+                print("\nCompetition is not open to child under 12 years old")
+            
+            elif age_set >= 12 & age_set < 18:
+                print("\nAge set to " + str(age_set) + ".")
+                return age_set
+                break
+
+            elif age_set >= 18:
+                print("\nAge set to " + str(age_set) + ".")
+                return age_set
+                break
+
+set_age()
+
+
 def set_grade(fighter_to_affect=""):
     """
-    - Grade might beu useful later to set a difficulty level
+    - Grade might be useful later to set a difficulty level
     - Optional argument as long as there's no fighter object
     """
 
@@ -9,19 +39,22 @@ def set_grade(fighter_to_affect=""):
             grade_set = int(input("\nPlease set your grade here (0 for kyusha) : "))
 
         except:
-            print("Please enter a number between 0 and 8\n")
+            print("\nPlease enter a number between 0 and 8")
 
         else:     
             if grade_set == 0:
-                print("Kyusha's competition set\n")
+                print("\nKyusha's competition set")
+                return grade_set
                 break
 
             elif grade_set <= 2:
-                print("Honor's competition set\n")
+                print("\nHonor's competition set")
+                return grade_set
                 break
 
             elif grade_set <= 8:
-                print("Excellence's competition set\n")
+                print("\nExcellence's competition set")
+                return grade_set
                 break
 
 set_grade()
@@ -39,6 +72,7 @@ def choose_kamae(fighter_to_affect=""):
 
         if kamae_set == "h":
             print("""
+    
     Kamae's list :
 
         - Chudan
@@ -55,37 +89,37 @@ def choose_kamae(fighter_to_affect=""):
             break
 
         elif kamae_set == "Chudan":
-            print("Chudan kamae choosed")
+            print("\nChudan kamae choosed")
             return kamae_set
             break
 
         elif kamae_set == "Hidari-Jodan":
-            print("Hidari-Jodan kamae choosed")
+            print("\nHidari-Jodan kamae choosed")
             return kamae_set
             break
 
         elif kamae_set == "Migi-Jodan":
-            print("Migi-Jodan kamae choosed")
+            print("\nMigi-Jodan kamae choosed")
             return kamae_set
             break
 
         elif kamae_set == "Sai-Nito":
-            print("Sai-Nito kamae choosed")
+            print("\nSai-Nito kamae choosed")
             return kamae_set
             break
 
         elif kamae_set == "Gyaku-Nito":
-            print("Gyaku-Nito kamae choosed")
+            print("\nGyaku-Nito kamae choosed")
             return kamae_set
             break
 
         elif kamae_set == "Waki":
-            print("Waki kamae choosed (why not)")
+            print("\nWaki kamae choosed (why not, it can be efficient against nito)")
             return kamae_set
             break
 
         else:
-            print("Incorrect input, please set a correct kamae please")
+            print("\nIncorrect input, please set a correct kamae please")
 
 kamae = choose_kamae()
 
