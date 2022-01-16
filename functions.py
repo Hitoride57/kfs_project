@@ -1,4 +1,30 @@
+def set_gender(fighter_to_affect = ""):
+
+    """
+    - Gender prevail on set_age to determine competition type (feminin)
+    - Optional argument as long as there's no fighter object
+    """
+    
+    while True:
+        gender_set = input("\nPlease set your gender (M)an or (W)oman : ")
+
+        if gender_set != ("M") and gender_set != ("W"):
+            print("\nPlease enter a valid answer")
+
+        elif gender_set == "M":
+            print("Gender set to Man")
+            return "Man"
+            break
+
+        elif gender_set == "W":
+            print("Gender set to Woman")
+            return "Woman"
+            break
+
+gender = set_gender()
+
 def set_age(fighter_to_affect=""):
+
     """
     - Age prevail on set_grade to determine competition type
     - Optional argument as long as there's no fighter object
@@ -15,7 +41,7 @@ def set_age(fighter_to_affect=""):
             if age_set < 12:
                 print("\nCompetition is not open to child under 12 years old")
             
-            elif age_set >= 12 & age_set < 18:
+            elif age_set >= 12 and age_set < 18:
                 print("\nAge set to " + str(age_set) + ".")
                 return age_set
                 break
@@ -25,10 +51,11 @@ def set_age(fighter_to_affect=""):
                 return age_set
                 break
 
-set_age()
+age = set_age()
 
 
 def set_grade(fighter_to_affect=""):
+
     """
     - Grade might be useful later to set a difficulty level
     - Optional argument as long as there's no fighter object
@@ -44,27 +71,30 @@ def set_grade(fighter_to_affect=""):
         else:     
             if grade_set == 0:
                 print("\nKyusha's competition set")
-                return grade_set
+                return "Kyusha"
                 break
 
             elif grade_set <= 2:
                 print("\nHonor's competition set")
-                return grade_set
+                return (str(grade_set) + "dan")
                 break
 
             elif grade_set <= 8:
                 print("\nExcellence's competition set")
-                return grade_set
+                return (str(grade_set) + "dan")
                 break
 
-set_grade()
+grade = set_grade()
 
 
 def choose_kamae(fighter_to_affect=""):
+
     """
     - Choose kamae function (ito, nito, jodan,...)
     - Optional argument as long as there's no fighter object
     """
+        
+        #Look forward to simplify input with a numbered list to select kamae
     
     while True:
 
@@ -123,7 +153,4 @@ def choose_kamae(fighter_to_affect=""):
 
 kamae = choose_kamae()
 
-if not kamae:
-    print("No kamae set")
-else:
-    print("The kamae set is : " + kamae)
+print("So the fighter is a " + gender + " of " + str(age) + " years old, whose grade is " + str(grade) + " and fight in " + kamae + ".")
