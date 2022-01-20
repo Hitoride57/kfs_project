@@ -70,18 +70,18 @@ def set_grade(fighter_to_affect=""):
 
         else:     
             if grade_set == 0:
-                print("\nKyusha's competition set")
-                return "Kyusha"
+                print("\nKyusha's grade set")
+                return grade_set
                 break
 
             elif grade_set <= 2:
-                print("\nHonor's competition set")
-                return (str(grade_set) + "dan")
+                print(str(grade_set) + "dan set")
+                return grade_set
                 break
 
             elif grade_set <= 8:
-                print("\nExcellence's competition set")
-                return (str(grade_set) + "dan")
+                print(str(grade_set) + "dan set")
+                return grade_set
                 break
 
 grade = set_grade()
@@ -153,4 +153,40 @@ def choose_kamae(fighter_to_affect=""):
 
 kamae = choose_kamae()
 
-print("So the fighter is a " + gender + " of " + str(age) + " years old, whose grade is " + str(grade) + " and fight in " + kamae + ".")
+
+# ↓↓↓ Bloc test à supprimer ↓↓↓
+
+try:
+    print("So the fighter is a " + gender + " of " + str(age) + " years old, whose grade is " + str(grade) + " and fight in " + kamae + " kamae.")
+except:
+    print("Informations is missing")
+
+# ↑↑↑ Bloc test à supprimer ↑↑↑
+
+
+def set_competition(fighter_gender,fighter_age,fighter_grade,fighter_to_affect=""):
+    if fighter_age < 18:
+        if fighter_gender == "Woman":
+            print("You can fight in Woman's and Junior's competition")
+            return "Woman's and Junior's"
+        else:
+            print("You can fight in Junior's competition")
+            return "Junior's"
+    if fighter_age >= 18:
+        if fighter_gender == "Woman":
+            print("You can fight in Woman's competition")
+            return "Woman's"
+        else:
+            if fighter_grade <= 1:
+                print("You can fight in Kyusha's competition")
+                return "Kyusha's"
+            elif fighter_grade < 3:
+                print("You can fight in Honor's competition")
+                return "Honor's"
+            else:
+                print("You can fight in Excellence's competition")
+                return "Excellence's"
+
+competition = set_competition(gender,age,grade)
+
+print("Fighter will go to " + competition + " competition.")
