@@ -8,15 +8,17 @@ def set_gender(fighter_to_affect = ""):
     while True:
         gender_set = input("\nPlease set your gender (M)an or (W)oman : ")
 
-        if gender_set != ("M") and gender_set != ("W"):
+        gender_set = gender_set.lower()
+        
+        if gender_set != ("m") and gender_set != ("w"):
             print("\nPlease enter a valid answer")
 
-        elif gender_set == "M":
+        elif gender_set == "m":
             print("Gender set to Man")
             return "Man"
             break
 
-        elif gender_set == "W":
+        elif gender_set == "w":
             print("Gender set to Woman")
             return "Woman"
             break
