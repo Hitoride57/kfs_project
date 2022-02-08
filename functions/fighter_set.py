@@ -1,8 +1,10 @@
-def set_gender(fighter_to_affect = ""):
+    # fighter  argument optional in anticipation of a 2-player mode)
+
+def set_gender(fighter = ""):
 
     """
     - Gender prevail on set_age to determine competition type (feminin)
-    - Optional argument as long as there's no fighter object
+    - 
     """
     
     while True:
@@ -25,7 +27,7 @@ def set_gender(fighter_to_affect = ""):
 
 gender = set_gender()
 
-def set_age(fighter_to_affect=""):
+def set_age(fighter = ""):
 
     """
     - Age prevail on set_grade to determine competition type
@@ -56,7 +58,7 @@ def set_age(fighter_to_affect=""):
 age = set_age()
 
 
-def set_grade(fighter_to_affect=""):
+def set_grade(fighter = ""):
 
     """
     - Grade might be useful later to set a difficulty level
@@ -89,7 +91,7 @@ def set_grade(fighter_to_affect=""):
 grade = set_grade()
 
 
-def choose_kamae(fighter_to_affect=""):
+def choose_kamae(fighter = ""):
 
     """
     - Choose kamae function (ito, nito, jodan,...)
@@ -166,7 +168,7 @@ except:
 # ↑↑↑ Bloc test à supprimer ↑↑↑
 
 
-def set_competition(fighter_gender,fighter_age,fighter_grade,fighter_to_affect=""):
+def set_competition(fighter_gender,fighter_age,fighter_grade,fighter=""):
     if fighter_age < 18:
         if fighter_gender == "Woman":
             print("You can fight in Woman's and Junior's competition")
