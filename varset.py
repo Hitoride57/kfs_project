@@ -1,6 +1,6 @@
     # File for variables preset definition
 
-grade = list(range(0,9))
+grade = [i for i in range(9)]
 
 competition = (
     "excellence",
