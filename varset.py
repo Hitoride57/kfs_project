@@ -7,7 +7,7 @@ competition = (
     "honor",
     "feminine",
     "junior",
-    "kuysha"
+    "kyusha"
 )
 
 kamae = (
